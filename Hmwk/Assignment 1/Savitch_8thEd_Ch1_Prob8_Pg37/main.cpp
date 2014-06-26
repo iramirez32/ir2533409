@@ -17,7 +17,7 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Identify Variables
-    double 
+    unsigned short 
         Qts,  //Number of quarters
         Dms,  //Number of dimes
         Nkls, //Number of nickels  
@@ -26,41 +26,37 @@ int main(int argc, char** argv) {
         totN, //Total amount of nickels   
         Tot;  //Total amount in coins 
             
-     //Magic formula to keep 2 digits after decimal
-    
-     cout.setf(ios::fixed);
-     cout.setf(ios::showpoint);
-     cout.precision(2);
     
     cout << "Hello!\n";
     cout << " Please enter the number of coins you have.\n";
     
     cout << "Number of quarters: ";
     cin >> Qts;
-    cout << " Total amount of quarters: $";
+    cout << " Total amount of quarters: ";
     //Number of quarters * value of quarter
-    totQ = Qts * .25;
-    cout << totQ <<".\n";        
+    totQ = Qts * 25;
+    cout << totQ <<" cents.\n";        
             
     cout << "Number of dimes: ";
     cin >> Dms;
-    cout << " Total amount of dimes: $";
+    cout << " Total amount of dimes: ";
     //Number of dimes * value of dime
-    totD = Dms * .10;
-    cout << totD <<".\n"; 
+    totD = Dms * 10;
+    cout << totD <<" cents.\n"; 
     
     cout << "Number of nickels: ";
     cin >> Nkls;
-    cout << " Total amount of nickels: $";
+    cout << " Total amount of nickels: ";
     //Number of nickels * value of nickel
-    totN = Nkls * .05;
-    cout << totN <<".\n";
+    totN = Nkls * 5;
+    cout << totN <<" cents.\n";
     
-    cout << "The total value of your coins is: $ ";
+    cout << "The total value of your coins is: ";
     //Total value of coins
     Tot = totQ + totD + totN;
     
     cout << Tot;
+    cout <<" cents.\n";
     
     //End Here.
     return 0;
