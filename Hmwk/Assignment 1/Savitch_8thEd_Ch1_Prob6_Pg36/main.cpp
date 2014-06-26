@@ -7,6 +7,19 @@
 #include <iostream>
 //Did not add the namespace "std"
 using namespace std;
+
+
+//System Libraries
+
+//User Defined Libraries
+
+//Global Constants
+
+//Function Prototypes
+
+//Execute Here!
+
+
 //Misspelled "main" for "msin"
 int main(int argc, char** argv) {
     //Omitted the "int" before variable names
@@ -35,7 +48,9 @@ int main(int argc, char** argv) {
     cout << totps;
     cout << " peas in all the pods.\n";
 
-//Missed the enclosing "}"
+    //Missed the enclosing "}"
+    
+    //End Here.
     return 0;
 }
 

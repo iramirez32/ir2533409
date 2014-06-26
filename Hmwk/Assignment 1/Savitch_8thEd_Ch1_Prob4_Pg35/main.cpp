@@ -5,18 +5,33 @@
  */
 #include <iostream>
 using namespace std;
+//System Libraries
 
+//User Defined Libraries
+
+//Global Constants
+
+//Function Prototypes
+
+//Execute Here!
 int main( ) {
+    //Number of pods, peas per pod, total peas
     int Nmofpds, psprpd, totps;
     
     cout <<"Press return after entering a number.\n";
     cout <<"Enter the number of pods:\n";
     
+    //Input number of pods
     cin >> Nmofpds;
     
     cout << "Enter the number of peas in a pod:\n";
+   
+    //Input number of peas per pod
     cin >> psprpd;
+    
+    //Calculate total peas
     totps = Nmofpds + psprpd;
+
     cout << "If you have ";
     cout << Nmofpds;
     cout << " pea pods\n";
@@ -27,7 +42,7 @@ int main( ) {
     cout << totps;
     cout << " peas in all the pods.\n";
 
-
+    //End Here.
     return 0;
 }
 
