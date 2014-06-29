@@ -47,6 +47,7 @@ int main(int argc, char** argv) {
             " months.\n";
     //Calculations
     newSal=monSal+(oldSal-OmonSal);
+    //Note: Check equation, not valid if # of months>12
     
     cout<<"Your new annual income would then total to \n";
     cout<<newSal<<" with the "<<Xmnths<<" month pay increase.\n";
