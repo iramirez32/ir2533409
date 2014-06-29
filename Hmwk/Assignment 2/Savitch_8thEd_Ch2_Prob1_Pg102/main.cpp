@@ -23,21 +23,20 @@ int main(int argc, char** argv) {
     cout<<"Enter the weight of your cereal box\n";
     cout<<"package in ounces: ";
     cin>>wtOunce;
-    cout<<"The equivalent weight of your cereal\n";
+    cout<<"The equivalent weight of your cereal\n";      
     cout<<"box package in tons is: ";
     
     tons = wtOunce/35273.92; //Weight in tons
     
     cout<<tons<<".\n";
+        
     cout<<"So, if one cereal box package weighs\n";
     cout<<tons<<" tons, we would need \n";
     
     crlBx= 1/tons; //Number of cereal boxes needed for 1 ton
     
     cout<<crlBx<<" cereal boxes to reach one metric ton.";
-            
-    
-            
+                        
     //End Here!        
     return 0;
 }
