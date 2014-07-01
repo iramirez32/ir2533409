@@ -17,7 +17,7 @@ using namespace std;
 //Execute Here!
 int main(int argc, char** argv) {
     //Define Variables
-    const float payInc = .076; //Percent of pay increase
+    const float payInc =7.6e-2f; //Percent of pay increase
     float oldSal, //Old annual salary
         Xmnths,   //Number of months that pay is increased
         OmonSal,  //Old monthly salary for X months
