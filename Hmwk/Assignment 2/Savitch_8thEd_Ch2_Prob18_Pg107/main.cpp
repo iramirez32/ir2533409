@@ -15,14 +15,15 @@ using namespace std;
 //Execute Here!
 int main(int argc, char** argv) {
     //Define Variables
-    char    gndr, //Gender
-            M,    //Male
-            F;    //Female
-    float   age,  //Age
-            wght, //Weight
-            hght, //Height
-            bmrF, //Basal metabolic rate for women
-            bmrM; //Basal metabolic rate for men
+    char    gndr; //Gender
+    unsigned short
+            age,  //Age in years
+            wght, //Weight in pounds
+            hght, //Height in inches
+            chcbrcl=230; //Amount of calories in a chocolate bar
+    float
+            bmr, //Basal metabolic rate
+            chcbr;//Number of chocolate bars
             
     cout<<"If you love chocolate but hate exercising, no worries!\n"<<
              "By using the Harris-Benedict equation, we can help you\n"<<
@@ -34,29 +35,32 @@ int main(int argc, char** argv) {
     cout<<"What is your age?\n";
     cin>>age;
     
-    cout<<"What is your weight?\n";
+    cout<<"What is your weight in pounds?\n";
     cin>>wght;
     
-    cout<<"What is your height?\n";
+    cout<<"What is your height in inches?\n";
     cin>>hght;
-    {
-    cout<<"Last but not least, what is your sex?\n"<<"Enter 'M' for male, or "<<
+    
+    cout<<"Last but not least, what is your gender?\n"<<"Enter 'M' for male, or "<<
             "'F' for female."<<endl;
      cin>>gndr;
     //Calculations
-    bmrF=655+((4.3*wght)+(4.7*hght)-(4.7*age));
-    
-    bmrM=66+((6.3*wght)+(12.9*hght)-(6.8*age));
     //Note: not reading "if" and only compiling "else" part no matter input
-    if (gndr=M)
-         cout<<"According to our calculations, you may consume\n"<<
-              (bmrM)/230<<" chocolate bars in order to maintain your "<<
-              "weight."<<endl;
-    else 
-         cout<<"According to our calculations, you may consume\n"<<
-              (bmrF/230)<<" chocolate bars in order to maintain your "<<
-              "weight."<<endl;
-    }
+      
+    if (gndr=='M'||gndr=='m') {
+        bmr=66+((6.3*wght)+(12.9*hght)-(6.8*age));
+    } else if(gndr=='F'||gndr=='f'){
+        bmr=655+((4.3*wght)+(4.7*hght)-(4.7*age));
+      }else{
+        cout<<"Invalid entry."<<endl;
+      }
+     chcbr=bmr/chcbrcl;
+     
+     //Output results
+     cout<<"Your BMR is: "<<bmr<<endl;
+     cout<<"The number of chocolate candy bars you may consume is: "<<
+             chcbr<<endl;
+     
     //End Here!
     return 0;
 }
