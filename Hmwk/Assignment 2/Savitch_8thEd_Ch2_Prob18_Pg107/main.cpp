@@ -16,13 +16,13 @@ using namespace std;
 int main(int argc, char** argv) {
     //Define Variables
     char    gndr, //Gender
-            M,
-            F;
+            M,    //Male
+            F;    //Female
     float   age,  //Age
             wght, //Weight
             hght, //Height
-            bmrF,  //Basal metabolic rate
-            bmrM;
+            bmrF, //Basal metabolic rate for women
+            bmrM; //Basal metabolic rate for men
             
     cout<<"If you love chocolate but hate exercising, no worries!\n"<<
              "By using the Harris-Benedict equation, we can help you\n"<<
