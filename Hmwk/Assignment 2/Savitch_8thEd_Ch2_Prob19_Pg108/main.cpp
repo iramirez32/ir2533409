@@ -16,14 +16,14 @@ using namespace std;
 //Execute Here.
 int main(int argc, char** argv) {
 //Define Variables
-    float Nscr, //Arbitrary number of scores
-            urPts, //Number of points you scored on assignment
-            totPts, //Total points possible from assignment
-            count, //Controls the number of times loop is repeated
+    float Nscr,      //Arbitrary number of scores
+            urPts,   //Number of points you scored on assignment
+            totPts,  //Total points possible from assignment
+            count=0, //Controls the number of times loop is repeated
             urSum=0, //Sum of your points
             totSum=0;//Sum of total available points
     
-    float tPrct; //Total percent of scores
+    float tPrct;     //Total percent of scores
     
     cout<<"How many exercises to input? ";
     cin>>Nscr;
@@ -40,9 +40,9 @@ int main(int argc, char** argv) {
     //Calculations
     urSum=urSum+urPts;  //Sum of points scored on assignments
     totSum=totSum+totPts;//Sum of total points possible
-    tPrct=(urSum/totSum)*100;
-       
     }
+    //Calculations
+    tPrct=(urSum/totSum)*100;
     
     cout<<fixed<<setprecision(1)<<endl;
     cout<<"Your total is "<<urSum<<" out of "<<totSum<<"."<<endl;
