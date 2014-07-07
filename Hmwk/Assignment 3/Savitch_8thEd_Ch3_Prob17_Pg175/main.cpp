@@ -86,6 +86,8 @@ int main(int argc, char** argv) {
          default:
              cout<<"Not a valid entry.\n";
      }
+     //Error: Switch won't work. Only output default option...
+     
      //Final calculation
      chcbr=bmr/chcbrcl;
      //Output results
