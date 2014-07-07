@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
             b, //Input b
             c, //Input c
             g, //discriminant
-            x1, //Positive root value
-            x2; //Negative root value
+            x1, //root value
+            x2; //root value
     
     cout<<"Welcome to the Quadratic Equation program."<<endl;
     cout<<"Input value for a: ";
@@ -31,13 +31,18 @@ int main(int argc, char** argv) {
     cin>>c;
     
     //Calculations
-    g=b*b-4*a*c;
+    g=b*b-4*a*c; //Discriminant
+    if (g>0){
     x1=(-b+(sqrtf(g)))/(2*a);
     x2=(-b-(sqrtf(g)))/(2*a);
+    cout<<"Root 1: "<<x1<<" and Root 2: "<<x2<<endl;
+    }else{
+        x1=x2=-b/(2*a);
+        float imag=sqrtf(-g)/(2*a); //Only for imaginary numbers
+        cout<<"Root 1: "<<x1<<"i and Root 2: "<<imag<<"i"<<endl;
+    }
     
-    cout<<"The roots are: "<<x1<<" and "<<x2<<"."<<endl;
-            
-
+    //End Here.
     return 0;
 }
 
