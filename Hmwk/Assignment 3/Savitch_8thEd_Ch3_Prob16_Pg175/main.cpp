@@ -5,6 +5,7 @@
  */
 //System Libraries
 #include <iostream>
+#include <iomanip>
 using namespace std;
 //User Libraries
 
@@ -15,20 +16,19 @@ using namespace std;
 //Execute Here.
 int main(int argc, char** argv) {
 //Declare variables
-    float   tempF, //Temp. in Fahrenheit
-            tempC; //Temp. in Celsius
+    int      tempC=100, //Temp. in Fahrenheit
+             tempF=((9*tempC)/5)+32; //Temp. in Celsius
     
     cout<<"Purpose of this program is to decrement the temperature\n"<<
             "starting at 100 degree Celsius and computing its equivalent\n"<<
             "in Fahrenheit until both values match.\n";
-    
-    //Calculations
-    tempC=100;
-    tempF=((9*tempC)/5)+32;
-    for (tempC=100;tempC=tempF;tempC--)
-        cout<<"Temperature in degree Celsius: "<<tempC;
-        cout<<"Temperature in degree Fahrenheit: "<<tempF;
-    
+   
+    while (tempC!=tempF){
+        tempC--;
+         tempF=((9*tempC)/5)+32;
+    }
+    //Output the results
+    cout<<"Temperature in Celsius equals Fahrenheit at "<<tempC<<"."<<endl;
 //End Here.
     return 0;
 }
