@@ -16,13 +16,13 @@ using namespace std;
 //Execute Here.
 int main(int argc, char** argv) {
 //Define variables
-    char    day, dum;   //Day of the week
+    char    day, dum;//Day of the week, and dummy
             
     unsigned short  
-            numMin,//Length of call in minutes
-            time;  //Time of the day in 24-hour format
+            numMin,  //Length of call in minutes
+            time;    //Time of the day in 24-hour format
     float
-            pBill; //Phone bill
+            pBill;   //Phone bill
     
     cout<<"Welcome to the Long-Distance phone cost calculator.\n";      
     cout<<"Enter day of the week call was made: \n";
