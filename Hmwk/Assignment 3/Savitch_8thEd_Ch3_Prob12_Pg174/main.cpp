@@ -5,7 +5,8 @@
  */
 //System Libraries
 #include <iostream>
-#include <cmath>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 //User Libraries
 
@@ -15,22 +16,24 @@ using namespace std;
 
 //Execute Here.
 int main(int argc, char** argv) {
-    float pi, //Approx. value of Pi
-            n, //number of times
-            nvalue; //Value of n times
+    //Declare variables
+    float apprPi1=1;  //Approx. value of Pi
+    int   nterm=1000; //number of times
     
     cout<<"Welcome to the PI Approximation Program."<<endl;
-    cout<<"Enter a value for 'n': ";
-    cin>>n;
     
+    //Loop to calculate approx. Pi.
+    for (int i=3;i<=nterm/2;i+=4){
+        apprPi1+=(-1.0f/i+1.0f/(i+2));
+    }
     //Calculations
-    nvalue=((-1)pow(n))/(2*n+1);
-    pi=4*nvalue;
+    apprPi1*=4;
+    //Output the results
+    cout<<"Approximate Pi utilizing infinite sequence = "<<
+            apprPi1<<" with "<<nterm<<" terms."<<endl;
+ 
     
-    cout<<"Approximate value for 'pi': ";
-    cout<<pi;
             
-
     return 0;
 }
 
