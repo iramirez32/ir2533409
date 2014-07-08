@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
             bmr, //Basal metabolic rate
             chcbr,//Number of chocolate bars
             bmrInc; //Increase to BMR according to physical activity
-    int     num;  //Number chosen for exercise option
+    char     num;  //Number chosen for exercise option
             
     cout<<"If you love chocolate but hate exercising, no worries!\n"<<
              "By using the Harris-Benedict equation, we can help you\n"<<
