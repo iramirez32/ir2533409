@@ -16,12 +16,12 @@ using namespace std;
 
 //Execute Here.
 int main(int argc, char** argv) {
-    unsigned short  costT=350, //Cost of twinkie in dollars
-             total=0;//Amount inserted
-    char     valN=5, //Nickel
-             valD=10, //Dime
-             valQ=25, //Quarter
-            valDlr=100; //Dollar
+    unsigned short  costT=350,//Cost of twinkie in dollars
+             total=0;         //Amount inserted
+    char     valN=5,          //Nickel
+             valD=10,         //Dime
+             valQ=25,         //Quarter
+            valDlr=100;       //Dollar
     char     nickel[7]="nickel",
             dime[5]="dime",
             quarter[8]="quarter",
@@ -46,13 +46,16 @@ int main(int argc, char** argv) {
         else{
             cout<<"You've inserted a fake coin!"<<endl;
         }
-        cout<<"Total amount so far: $"<<total/100.0f<<endl;
+        //Display total entered with penny to dollar conversion
+        cout<<"Total amount so far: $"<<(total/100.0f)<<endl;
         
     } while (total<costT);
     
-    cout<<"Your change is: $"<<(total-costT)/100.0f<<endl;
+    //Output monetary
+    cout<<"Your change is: $"<<((total-costT)/100.0f)<<endl;
     cout<<"Enjoy your deep-fried Twinkie!"<<endl;
 
+    //End Here.
     return 0;
 }
 
