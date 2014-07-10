@@ -22,7 +22,8 @@ int main(int argc, char** argv) {
             galns,//Amount of gallons consumed by car
             mpg;  //Miles per gallon
     char    ans;  //Answer to loop
-     
+    
+    cout<<fixed<<setprecision(2)<<endl; 
     do 
     {
         cout<<"Please enter the amount of liters of gasoline: "<<endl;
@@ -31,8 +32,8 @@ int main(int argc, char** argv) {
         cin>>nMile;
     
         //Calculations
-        galns=nLit*litperGal;
-        mpg=nMile/galns;
+        galns=nLit*litperGal; //Amount of gallons converted from liters
+        mpg=nMile/galns;      //Miles per gallon
     
         //Output results
         cout<<"Total miles per gallon (mpg): "<<mpg<<endl;
