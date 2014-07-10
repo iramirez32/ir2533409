@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Idalia Ramirez
- * Created on July 10, 2014, 12:57 AM
+ * Created on July 10, 2014, 1:42 PM
  */
 //System Libraries
 #include <iostream>
@@ -38,20 +38,30 @@ int main(int argc, char** argv) {
     cout<<"Your hat size is: "<<hatsze<<endl;
     
     //Calculations for jacket size
+    {
     if (age>=30){
         //Add 1/8 of an inch per every 10 years over 30
         jcktsze=((hght*wght)/288)+(1/8.0f)*((age-30)/10.0f);   
     }else
        jcktsze=((hght*wght)/288); 
     cout<<"Your jacket size measured at chest in inches is: "<<jcktsze<<endl;
+    }
+    //Output jacket size in ten years any way
+    jcktsze=((hght*wght)/288)+(1/8.0f);
+    cout<<"Your jacket size in ten years: "<<jcktsze<<endl;
     
+    {
     //Calculations for waist size
     if (age>=28){
         //Add 1/10 to each 2 years after 28
         waist=(wght/5.7)+(1/10.0f)*((age-28)/2.0f);
     }else
-        waist=(wght/5.7); //Waist in inches if below 28
+        waist=(wght/5.7); //Waist in inches if below 22
     cout<<"Your waist size in inches is: "<<waist<<endl;
+    }
+    //Output waist size in ten years anyway
+    waist=(wght/5.7)+(1/10.0f);
+    cout<<"Your waist size in ten years: "<<waist<<endl;
     
     //Loop control
     cout<<"Would you like to try again? Enter 'Y' for yes.\n";
