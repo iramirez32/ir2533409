@@ -19,7 +19,9 @@ int main(int argc, char** argv) {
             dwnpmt,  //Down payment for house
             initLB,  //Initial loan balance
             annlMG,  //Annual mortgage cost
-            taxrate=.35, //Marginal tax rate
+            prncple,
+            intrst,
+            txsvng,
             aftrtax; //After tax cost of the house
     char  answr;     //Answer to control loop
     //Not sure if tax rate is directly subtracted from annlMG in aftrtax
@@ -32,8 +34,11 @@ int main(int argc, char** argv) {
     
     //Calculations
     initLB=hsePrce-dwnpmt; //Initial loan balance
-    annlMG=initLB*.09;     //Annual mortgage cost
-    aftrtax=annlMG-taxrate;//After tax cost of the house
+    prncple=.03*(initLB);
+    intrst=.06*(initLB);
+    annlMG=prncple+intrst;     //Annual mortgage cost
+    txsvng=intrst*.35;
+    aftrtax=annlMG-txsvng;//After tax cost of the house
     
     cout<<"The annual after-tax cost of the new house for first year\n"<<
             "of ownership is: $"<<aftrtax<<endl;
