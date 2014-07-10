@@ -6,7 +6,6 @@
 //System Libraries
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 using namespace std;
 //User Libraries
 
@@ -20,7 +19,11 @@ int main(int argc, char** argv) {
             mass2,  //Mass of object 2 in grams
             dist,   //Distance between two objects in cm
             Gforce; //Gravitational Force in dynes
+    char    ans;
     
+    cout<<"Welcome to the Gravitational Force Program."<<endl;
+    do
+    {
     cout<<"Enter mass of object 1 in grams: ";
     cin>>mass1;
     cout<<"Enter mass of object 2 in grams: ";
@@ -29,11 +32,17 @@ int main(int argc, char** argv) {
     cin>>dist;
     
     //Calculations
-    Gforce=(G*mass1*mass2)/(dist*dist);
+    Gforce=(G*mass1*mass2)/(dist*dist); //Gravitational force
     
     //Output Gravitational Force result
-    cout<<"The Gravitational Force between these objects = "<<Gforce<<" dynes";
-
+    cout<<"The Gravitational Force between these objects = "<<Gforce<<" dynes"<<
+            endl;
+    cout<<"Would you like to repeat? Enter 'Y' for yes."<<endl;
+    cin>>ans;
+    } while (ans=='Y'||ans=='y');
+    cout<<"Good-bye!"<<endl;
+    
+    //End Here.
     return 0;
 }
 
