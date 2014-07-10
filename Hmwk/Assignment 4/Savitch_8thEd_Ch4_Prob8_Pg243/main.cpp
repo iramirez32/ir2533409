@@ -19,12 +19,12 @@ int main(int argc, char** argv) {
             dwnpmt,  //Down payment for house
             initLB,  //Initial loan balance
             annlMG,  //Annual mortgage cost
-            prncple,
-            intrst,
-            txsvng,
+            prncple, //Loan principle from initial loan balance
+            intrst,  //Interest on initial loan balance
+            txsvng,  //Tax savings
             aftrtax; //After tax cost of the house
     char  answr;     //Answer to control loop
-    //Not sure if tax rate is directly subtracted from annlMG in aftrtax
+    
     do
     {
     cout<<"Enter the total price for the house: $";
@@ -34,11 +34,11 @@ int main(int argc, char** argv) {
     
     //Calculations
     initLB=hsePrce-dwnpmt; //Initial loan balance
-    prncple=.03*(initLB);
-    intrst=.06*(initLB);
-    annlMG=prncple+intrst;     //Annual mortgage cost
-    txsvng=intrst*.35;
-    aftrtax=annlMG-txsvng;//After tax cost of the house
+    prncple=.03*(initLB);  //Principle
+    intrst=.06*(initLB);   //Interest
+    annlMG=prncple+intrst; //Annual mortgage cost
+    txsvng=intrst*.35;     //Tax savings
+    aftrtax=annlMG-txsvng; //After tax cost of the house
     
     cout<<"The annual after-tax cost of the new house for first year\n"<<
             "of ownership is: $"<<aftrtax<<endl;
