@@ -17,7 +17,7 @@ using namespace std;
 
 //Execute Here.
 int main(int argc, char** argv) {
-    //Define variables
+//Declare variables
     char    name[20],  //Name of player
             place[20], //Favorite place of player
             monstr[15],//Player's worst fear
@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
             "lose all of your coins, you automatically lose. Good Luck!\n";
     cout<<endl;
     
-    //Loop the code
+    //Loop the input/output code
     do
     {
      //Total coins = gold + silver
@@ -73,8 +73,9 @@ int main(int argc, char** argv) {
     //Directly correlate door choice to array of randomization
     choice=doorarray[choice];
     
-    //Output door assignment
+    //Output door assignment using switch
     switch (choice){
+        //Case 1
         case 1: 
             cout<<"!POOF! You have found a Genie! He likes to give\n"<<
             "away free money, so you are in luck! Genie has granted\n"<<
@@ -88,8 +89,9 @@ int main(int argc, char** argv) {
             cout<<"You now have "<<tGold<<" gold coins and "<<tSilvr<<
                     " silver coins.\n"<<"Which is a total of "<<tCoins<<
                     " coins. Keep going!"<<endl;
-            cout<<" "<<endl;
+            cout<<endl;
             break;
+            //Case 2
         case 2: 
             cout<<"OH NO! You have entered the lair of "<<monstr<<"!!\n"<<
             "He has taken all of your coins away! You have automatically\n"<<
@@ -100,28 +102,35 @@ int main(int argc, char** argv) {
             tSilvr=0; //Total silver coins
             tCoins=tGold+tSilvr; //Total coins in general
             break;
+            //Case 3
         case 3:
+            //Displays code figure
             cout<<"    ||       ||"<<endl;
             cout<<"    ||       ||"<<endl;
             cout<<"    ||       ||"<<endl;
             cout<<"    ||       ||"<<endl;
             cout<<"    ||       ||"<<endl;
-            cout<<" "<<endl;
+            cout<<endl;
             cout<<" C               C"<<endl;
             cout<<"  C             C"<<endl;
             cout<<"    C C C C C C "<<endl;
-            cout<<" "<<endl;
+            cout<<endl;
             cout<<"You have opened the room of happiness!"<<endl;
             cout<<"Your coins are safe, go on and be happy!"<<endl;
-            cout<<" "<<endl;
+            cout<<"You have "<<tGold<<" gold coins and "<<tSilvr<<" silver"<<
+                    " coins. Keep going!"<<endl;
+            cout<<endl;
             break;
+            //Case 4
         case 4:
             cout<<"Congrats! You have found the exit! You have completed\n"<<
-            "the game. Thanks for playing!"<<endl;
+            "the game with "<<tGold<<" gold coins and "<<tSilvr<<
+                    " silver coins. Thanks for playing!"<<endl;
             
             //Figuratively setting tCoins equal to zero so it ends loop
             tCoins=0; 
             break; 
+            //Case 5
         case 5:
             cout<<"You have opened a room that has transported you to\n"<<
                     place<<"! This trip will cost you 2 gold coins and 2 "<<
@@ -135,7 +144,7 @@ int main(int argc, char** argv) {
             cout<<"You now have "<<tGold<<" gold coins and "<<tSilvr<<
                     " silver coins.\n"<<"Which is a total of "<<tCoins<<
                     " coins. Continue your journey!"<<endl;
-            cout<<" "<<endl;
+            cout<<endl;
             break;
     }
     //As long as the player has coins, game continues
@@ -151,5 +160,4 @@ int main(int argc, char** argv) {
     
     //End Here.
     return 0;
-    
 }
