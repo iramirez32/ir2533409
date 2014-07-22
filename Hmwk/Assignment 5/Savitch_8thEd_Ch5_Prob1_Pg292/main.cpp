@@ -23,12 +23,20 @@ int main(int argc, char** argv) {
         Min=0,   //Minute input
         HRout=0, //Hour output
         AMPM=0;  //Output of AM of PM
-     
+    char ans;
+    do
+    {
     //Function calls
     input(HRin, Min);  //Input function
     AMPM = convrsn (HRin, Min, HRout); //Conversion function set equal to AMPM
     //AMPM is then defined in output function depending on value
     output (AMPM, HRout, Min, HRin);   //Output function
+    
+    cout<<endl;
+    cout<<"Would you like to repeat? Enter 'Y' for yes."<<endl;
+    cin>>ans;
+    }
+    while (ans=='Y'||ans=='y');
             
     return 0;
 }
