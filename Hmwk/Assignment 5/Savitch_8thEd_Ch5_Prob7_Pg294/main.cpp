@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Idalia Ramirez
- * Created on July 22, 2014, 8:55 PM
+ * Created on July 22, 2014, 9:42 PM
  */
 //System Libraries
 #include <iostream>
@@ -10,9 +10,10 @@
 using namespace std;
 //User Defined Libraries
 
+
 //Global Constants
-float FtoM=0.3048; //Amount of meters in one foot
-float ItoC=2.54;   //Amount of centimeters in one inch
+float MtoF=3.28084; //Amount of meters in one foot
+float CtoI=0.393701;   //Amount of centimeters in one inch
 //Function Prototypes
 void input (float&, float&);
 void calc (float&, float&, float&, float&);
@@ -30,31 +31,33 @@ int main(int argc, char** argv) {
   {
     cout<<fixed<<setprecision(2);
     //Function calls
-    input (Feet, Inches);
+    input (Meters, Cntmtr);
     calc (Feet, Inches, Meters, Cntmtr);
-    output (Meters, Cntmtr);
+    output (Feet, Inches);
     cout<<endl;
     cout<<"Would you like to repeat? Enter 'Y' for yes."<<endl;
     cin>>ans;
   }while (ans=='Y'||ans=='y');
     return 0;
 }
-void input (float &Feet,float &Inches){
+void input (float &Meters,float &Cntmtr){
     //Input in feet and inches
-    cout<<"Enter the length in feet and inches."<<endl;
-    cout<<"Feet: ";
-    cin>>Feet;
-    cout<<"Inches: ";
-    cin>>Inches; 
+    cout<<"Enter the length in meters and centimeters."<<endl;
+    cout<<"Meters: ";
+    cin>>Meters;
+    cout<<"Centimeters: ";
+    cin>>Cntmtr; 
 }
 void calc (float &Feet,float &Inches,float &Meters,float &Cntmtr){
     //Calculations and conversions
-    Meters=Feet*FtoM;
-    Cntmtr=Inches*ItoC;  
+    Feet=Meters*MtoF;
+    Inches=Cntmtr*CtoI;  
 }
-void output (float &Meters,float &Cntmtr){
+void output (float &Feet,float &Inches){
     //Output the results in meters and centimeters
-    cout<<"The new length in meters and centimeters is:"<<endl;
-    cout<<"Meters: "<<Meters<<endl;
-    cout<<"Centimeters: "<<Cntmtr<<endl;
+    cout<<"The new length in feet and inches is:"<<endl;
+    cout<<"Feet: "<<Feet<<endl;
+    cout<<"Inches: "<<Inches<<endl;
 }
+
+
