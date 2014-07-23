@@ -1,11 +1,10 @@
 /* 
  * File:   main.cpp
  * Author: Idalia Ramirez
- * Created on July 22, 2014, 1:42 PM
+ * Created on July 22, 2014, 7:18 PM
  */
 //System Libraries
 #include <iostream>
-#include <ctime>
 using namespace std;
 //User Defined Libraries
 
@@ -22,7 +21,7 @@ int main(int argc, char** argv) {
         Min=0,  //Minute of arrival
         HRwte=0,//Hours of waiting time
         Minwte; //Minutes of waiting time
-    char ans;
+    char ans;   //Answer to loop
     
     do
     {
@@ -51,8 +50,8 @@ void input (int &HRin,int &Min,int &HRwte,int &Minwte){
     cin>>Minwte;
 }
 void procss (int &HRin,int &Min,int &HRwte,int &Minwte){
-    //Calculations for 24-Hour notation
-    HRwte=HRin+HRwte;
+    //Calculations for 12-hour notation
+    HRwte=(HRin+HRwte)-12;
     Minwte=Min+Minwte;
     if(Minwte>=60){
         Minwte=Minwte-60;
@@ -62,7 +61,7 @@ void procss (int &HRin,int &Min,int &HRwte,int &Minwte){
     }   
 }
 void output (int &HRwte, int &Minwte){
-    cout<<"Time that it will be after wait-time: "<<endl;
+    cout<<"Time in 12-Hour notation that it will be after wait-time: "<<endl;
     cout<<"Hour: "<<HRwte<<endl;
     cout<<"Min: "<<Minwte<<endl;
 }
