@@ -6,14 +6,14 @@
 //System Libraries
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 using namespace std;
 //User Defined Libraries
 
 
 //Global Constants
 float MtoF=3.28084; //Amount of meters in one foot
-float CtoI=0.393701;   //Amount of centimeters in one inch
+float CtoI=0.393701;//Amount of centimeters in one inch
+
 //Function Prototypes
 void input2 (float&, float&);
 void calc2 (float&, float&, float&, float&);
@@ -35,6 +35,7 @@ int main(int argc, char** argv) {
     calc2 (Feet, Inches, Meters, Cntmtr);
     output2 (Feet, Inches);
     cout<<endl;
+    //Answer to loop
     cout<<"Would you like to repeat? Enter 'Y' for yes."<<endl;
     cin>>ans;
   }while (ans=='Y'||ans=='y');

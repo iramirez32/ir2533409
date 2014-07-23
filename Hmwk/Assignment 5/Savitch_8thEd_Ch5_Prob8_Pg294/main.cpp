@@ -6,15 +6,14 @@
 //System Libraries
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 using namespace std;
 //User Defined Libraries
 
 //Global Constants
-float FtoM=0.3048; //Amount of meters in one foot
-float ItoC=2.54;   //Amount of centimeters in one inch
+float FtoM=0.3048;  //Amount of meters in one foot
+float ItoC=2.54;    //Amount of centimeters in one inch
 float MtoF=3.28084; //Amount of meters in one foot
-float CtoI=0.393701;   //Amount of centimeters in one inch
+float CtoI=0.393701;//Amount of centimeters in one inch
 
 //Function Prototypes
 void chce1 (float&, float&, float&, float&);
@@ -38,17 +37,19 @@ int main(int argc, char** argv) {
   do
   {
     cout<<fixed<<setprecision(2);
+    //Input choice
     cout<<"Press '1' if you want to convert from Feet/Inches to Meters/"<<
             "Centimeters."<<endl;
     cout<<"Press '2' if you want to convert from Meters/Centimeters to"<<
             " Feet/Inches."<<endl;
     cin>>choice;
-    //Choosing conversion choice
+    //Function calls
     if (choice=='1'){
         chce1 (Feet, Inches, Meters, Cntmtr);
     }else if (choice=='2'){
         chce2 (Feet, Inches, Meters, Cntmtr);
     }
+    //Answer to loop
     cout<<"Would you like to repeat? Enter 'Y' for yes."<<endl;
     cin>>ans;
   }while (ans=='Y'||ans=='y');
