@@ -76,8 +76,6 @@ bool Addn(char n1,char n2,char &d,bool c){
     d=sum%10+48;
     return sum/10;
 }
-
-
 int length(char a[]){
     int cnt=0;
     do{}while(a[cnt++]!='\0');
