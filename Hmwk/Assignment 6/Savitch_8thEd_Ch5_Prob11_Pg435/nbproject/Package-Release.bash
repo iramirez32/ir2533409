@@ -13,8 +13,8 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/savitch_8thed_ch5_prob11_pg435_
-OUTPUT_BASENAME=savitch_8thed_ch5_prob11_pg435_
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/savitch_8thed_ch5_prob11_pg435
+OUTPUT_BASENAME=savitch_8thed_ch5_prob11_pg435
 PACKAGE_TOP_DIR=savitch8thedch5prob11pg435/
 
 # Functions
