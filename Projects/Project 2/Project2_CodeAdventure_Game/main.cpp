@@ -13,10 +13,13 @@
 using namespace std;
 //User Defined Libraries
 
+
 //Global Constants
+
 
 //Function Prototypes
 int RPS ();
+
 
 //Execute Here.
 int main(int argc, char** argv) {
@@ -46,18 +49,25 @@ int main(int argc, char** argv) {
         cout<<"Please enter your name: ";
         cin>>name;
 
+
         cout<<"In what city were you born? ";
         cin>>born;
         
         cout<<"Enter the name of a close relative: ";
         cin>>rltve;
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 
         cout<<"Enter your favorite place: ";
         cin>>place;
 
+
         cout<<"Name the monster of your worst nightmares: ";
         cin>>monstr;
         cout<<endl;
+
 
         //Basic description of game rules
         cout<<name<<", you have eight doors to choose from. You will start\n"
@@ -66,25 +76,30 @@ int main(int argc, char** argv) {
                 "lose all of your coins, you automatically lose. Good Luck!\n";
         cout<<endl;
 
+
         //Loop the input/output code
         do
         {
              //Total coins = gold + silver
              tCoins=tGold+tSilvr;
 
+
             //Player's choice - Input
             cout<<"Please choose a door [1/2/3/4/5/6/7/8]: ";
             cin>>choice;
             cout<<endl;
 
+
             //Shuffles the choice output so door assignment won't always be same
             int doorarray[8]={1,2,3,4,5,6,7,8};
             random_shuffle (&doorarray[0],&doorarray[8]);
+
 
             //Choice is minus 1 due to counting 0 as an integer
             choice=choice-1;
             //Directly correlate door choice to array of randomization
             choice=doorarray[choice];
+
 
             //Output door assignment using switch
             switch (choice){
@@ -94,10 +109,12 @@ int main(int argc, char** argv) {
                     "away free money, so you are in luck! Genie has granted\n"<<
                     "you 5 gold coins and 5 silver coins. Keep going!"<<endl;
 
+
                     //Calculations
                     tGold=tGold+5;   //Total gold coins
                     tSilvr=tSilvr+5; //Total silver coins
                     tCoins=tGold+tSilvr; //Total coins in general
+
 
                     cout<<"You now have "<<tGold<<" gold coins and "<<tSilvr<<
                             " silver coins.\n"<<"Which is a total of "
@@ -142,6 +159,7 @@ int main(int argc, char** argv) {
                             " gold coins and "<<tSilvr<<" silver coins.\n"<<
                             "Thanks for playing!"<<endl;
 
+
                     //Figuratively setting tCoins equal to zero so it ends loop
                     tCoins=0; 
                     break; 
@@ -152,10 +170,12 @@ int main(int argc, char** argv) {
                             <<place<<"! This trip will cost you 5 gold coins\n"
                             <<"and 5 silver coins."<<endl;
 
+
                     //Calculations
                     tGold=tGold-5;   //Total gold coins
                     tSilvr=tSilvr-5; //Total silver coins
                     tCoins=tGold+tSilvr; //Total coins in general
+
 
                     cout<<"You now have "<<tGold<<" gold coins and "<<tSilvr<<
                             " silver coins.\n"<<"Which is a total of "
@@ -210,6 +230,7 @@ int main(int argc, char** argv) {
                     //Function call
                     decsn=RPS ();
 
+
                     if (decsn==1){
                         cout<<"Congrats you have won! Bob has given you 5\n"
                                 "gold coins. Good job!"<<endl;
@@ -225,23 +246,49 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     cout<<"You have "<<tGold<<" gold coins and "<<tSilvr<<
                             " silver coins."<<endl;
+<<<<<<< HEAD
+                    cout<<endl;
+=======
+>>>>>>> origin/master
                     break;
                 }
                 //Case 8
                 case 8:{
                     //Local variable
+<<<<<<< HEAD
+                    const int SIZE = 7;
+                    string line[SIZE];
+=======
                     string line;
+>>>>>>> origin/master
                     
                     cout<<"You have just found a letter from your close\n"
                             <<"relative: "<<rltve<<". You may read the letter"
                             <<" now."<<endl;
                     cout<<endl;
                     //Open file from local disk
+<<<<<<< HEAD
+                    input.open ("Data1.txt");
+                    //Read from file
+                    
+                    for(int i=0;i<SIZE;i++){
+                        getline(input,line[i]);
+                    }
+                    //String array displayed as 2D character array
+                    for(int i=0;i<SIZE;i++){
+                        for(int j=0;j<line[i].length();j++){
+                            cout<<line[i][j];
+                        }
+                        cout<<endl;
+                    }
+                    
+=======
                     input.open ("C://Data.txt");
                     while (getline(input,line)){
                         cout<<line<<endl;
    
                     }
+>>>>>>> origin/master
                     cout<<"Sincerely,\n"<<rltve<<endl;
                     cout<<endl;
                     tSilvr=tSilvr+5;
@@ -254,6 +301,7 @@ int main(int argc, char** argv) {
             //As long as the player has coins, game continues
         }while (tCoins!=0); 
 
+
         //Asks the player if he/she would like to repeat the game
         cout<<endl;
         cout<<"Would you like to play again?\n"
@@ -261,11 +309,13 @@ int main(int argc, char** argv) {
         cin>>answr;
         cout<<endl;
 
+
     }while (answr=='Y'||answr=='y');
     
     //End Here.
     return 0;
 }
+
 
 //Function definitions
 int RPS (){
