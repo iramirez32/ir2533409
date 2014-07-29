@@ -8,6 +8,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <algorithm>
+#include <fstream>
+#include <string>
 using namespace std;
 //User Defined Libraries
 
@@ -22,13 +24,16 @@ int main(int argc, char** argv) {
     char    name[20],  //Name of player
             place[20], //Favorite place of player
             monstr[15],//Player's worst fear
-            born[20],
+            born[20],  //Player's birthplace
+            rltve[20], //Player's relative name
             answr;     //Player's answer to repeat the game
                
     int     tGold=10,  //Total gold coins
             tSilvr=10, //Total silver coins
             tCoins,    //Total coins - gold + silver
             choice;    //Player's choice of door number
+    
+    ifstream input;    //File to be input
     
     //Seed randomization
     srand(static_cast<unsigned int>(time(0)));
@@ -43,6 +48,9 @@ int main(int argc, char** argv) {
 
         cout<<"In what city were you born? ";
         cin>>born;
+        
+        cout<<"Enter the name of a close relative: ";
+        cin>>rltve;
 
         cout<<"Enter your favorite place: ";
         cin>>place;
@@ -194,7 +202,7 @@ int main(int argc, char** argv) {
                     cout<<"You have just entered the Game Room!"<<endl;
                     cout<<"Meet Bob, a rock, paper, scissor (RPS) fanatic.\n"
                             <<"He challenges you to three rounds of RPS.\n" 
-                            <<"If you win,he will give you 5 gold coins.\n"
+                            <<"If you win, he will give you 5 gold coins.\n"
                             <<"But if you lose, he will take 5 of your "
                             <<"gold coins."<<endl;
                     cout<<"You will be player 1. Good luck!"<<endl;
@@ -206,12 +214,41 @@ int main(int argc, char** argv) {
                         cout<<"Congrats you have won! Bob has given you 5\n"
                                 "gold coins. Good job!"<<endl;
                         tGold=tGold+5;
+                        tSilvr=tSilvr;
                     }else{
                         cout<<"Bob has won! You may pay him his 5 gold coins\n"
                                 "now."<<endl;
                         tGold=tGold-5;
-                    }      
+                        tSilvr=tSilvr;
+                        tCoins=tGold+tSilvr;
+                    }
+                    cout<<endl;
+                    cout<<"You have "<<tGold<<" gold coins and "<<tSilvr<<
+                            " silver coins."<<endl;
                     break;
+                }
+                //Case 8
+                case 8:{
+                    //Local variable
+                    string line;
+                    
+                    cout<<"You have just found a letter from your close\n"
+                            <<"relative: "<<rltve<<". You may read the letter"
+                            <<" now."<<endl;
+                    cout<<endl;
+                    //Open file from local disk
+                    input.open ("C://Data.txt");
+                    while (getline(input,line)){
+                        cout<<line<<endl;
+   
+                    }
+                    cout<<"Sincerely,\n"<<rltve<<endl;
+                    cout<<endl;
+                    tSilvr=tSilvr+5;
+                    tGold=tGold;
+                    tCoins=tSilvr+tGold;
+                    //Close file
+                    input.close();
                 }
             }
             //As long as the player has coins, game continues
