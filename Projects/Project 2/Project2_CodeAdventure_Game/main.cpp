@@ -31,8 +31,8 @@ int main(int argc, char** argv) {
             rltve[20], //Player's relative name
             answr;     //Player's answer to repeat the game
                
-    int     tGold=10,  //Total gold coins
-            tSilvr=10, //Total silver coins
+    int     tGold=5,  //Total gold coins
+            tSilvr=5, //Total silver coins
             tCoins,    //Total coins - gold + silver
             choice;    //Player's choice of door number
     
@@ -55,10 +55,7 @@ int main(int argc, char** argv) {
         
         cout<<"Enter the name of a close relative: ";
         cin>>rltve;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
         cout<<"Enter your favorite place: ";
         cin>>place;
@@ -71,7 +68,7 @@ int main(int argc, char** argv) {
 
         //Basic description of game rules
         cout<<name<<", you have eight doors to choose from. You will start\n"
-                "with 10 gold coins and 10 silver coins. Your objective is to\n"
+                "with 5 gold coins and 5 silver coins. Your objective is to\n"
                 "find the exit door, with some coins in your pocket. If you \n"
                 "lose all of your coins, you automatically lose. Good Luck!\n";
         cout<<endl;
@@ -246,31 +243,24 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     cout<<"You have "<<tGold<<" gold coins and "<<tSilvr<<
                             " silver coins."<<endl;
-<<<<<<< HEAD
+
                     cout<<endl;
-=======
->>>>>>> origin/master
+
                     break;
                 }
                 //Case 8
                 case 8:{
                     //Local variable
-<<<<<<< HEAD
                     const int SIZE = 7;
-                    string line[SIZE];
-=======
-                    string line;
->>>>>>> origin/master
-                    
+                    string  line[SIZE];
+
                     cout<<"You have just found a letter from your close\n"
                             <<"relative: "<<rltve<<". You may read the letter"
                             <<" now."<<endl;
                     cout<<endl;
                     //Open file from local disk
-<<<<<<< HEAD
                     input.open ("Data1.txt");
-                    //Read from file
-                    
+                    //Read from file 
                     for(int i=0;i<SIZE;i++){
                         getline(input,line[i]);
                     }
@@ -281,14 +271,6 @@ int main(int argc, char** argv) {
                         }
                         cout<<endl;
                     }
-                    
-=======
-                    input.open ("C://Data.txt");
-                    while (getline(input,line)){
-                        cout<<line<<endl;
-   
-                    }
->>>>>>> origin/master
                     cout<<"Sincerely,\n"<<rltve<<endl;
                     cout<<endl;
                     tSilvr=tSilvr+5;
