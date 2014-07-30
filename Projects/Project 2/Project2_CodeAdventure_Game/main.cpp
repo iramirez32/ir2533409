@@ -33,10 +33,10 @@ int main(int argc, char** argv) {
                
     int     tGold=5,  //Total gold coins
             tSilvr=5, //Total silver coins
-            tCoins,    //Total coins - gold + silver
-            choice;    //Player's choice of door number
+            tCoins,   //Total coins - gold + silver
+            choice;   //Player's choice of door number
     
-    ifstream input;    //File to be input
+    ifstream input;   //File to be input
     
     //Seed randomization
     srand(static_cast<unsigned int>(time(0)));
@@ -49,22 +49,18 @@ int main(int argc, char** argv) {
         cout<<"Please enter your name: ";
         cin>>name;
 
-
         cout<<"In what city were you born? ";
         cin>>born;
         
         cout<<"Enter the name of a close relative: ";
         cin>>rltve;
 
-
         cout<<"Enter your favorite place: ";
         cin>>place;
-
 
         cout<<"Name the monster of your worst nightmares: ";
         cin>>monstr;
         cout<<endl;
-
 
         //Basic description of game rules
         cout<<name<<", you have eight doors to choose from. You will start\n"
@@ -73,30 +69,25 @@ int main(int argc, char** argv) {
                 "lose all of your coins, you automatically lose. Good Luck!\n";
         cout<<endl;
 
-
         //Loop the input/output code
         do
         {
              //Total coins = gold + silver
              tCoins=tGold+tSilvr;
 
-
             //Player's choice - Input
             cout<<"Please choose a door [1/2/3/4/5/6/7/8]: ";
             cin>>choice;
             cout<<endl;
 
-
             //Shuffles the choice output so door assignment won't always be same
             int doorarray[8]={1,2,3,4,5,6,7,8};
             random_shuffle (&doorarray[0],&doorarray[8]);
-
 
             //Choice is minus 1 due to counting 0 as an integer
             choice=choice-1;
             //Directly correlate door choice to array of randomization
             choice=doorarray[choice];
-
 
             //Output door assignment using switch
             switch (choice){
@@ -106,12 +97,10 @@ int main(int argc, char** argv) {
                     "away free money, so you are in luck! Genie has granted\n"<<
                     "you 5 gold coins and 5 silver coins. Keep going!"<<endl;
 
-
                     //Calculations
                     tGold=tGold+5;   //Total gold coins
                     tSilvr=tSilvr+5; //Total silver coins
                     tCoins=tGold+tSilvr; //Total coins in general
-
 
                     cout<<"You now have "<<tGold<<" gold coins and "<<tSilvr<<
                             " silver coins.\n"<<"Which is a total of "
@@ -119,7 +108,7 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     break;
                 }
-                    //Case 2
+                //Case 2
                 case 2: {
                     cout<<"OH NO! You have entered the lair of "<<monstr<<"!!\n"
                             <<"He has taken all of your coins away!\n"
@@ -129,7 +118,7 @@ int main(int argc, char** argv) {
                     tCoins=0;
                     break;
                 }
-                    //Case 3
+                //Case 3
                 case 3:{
                     //Displays code figure
                     cout<<"    ||       ||"<<endl;
@@ -149,19 +138,18 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     break;
                 }
-                    //Case 4
+                //Case 4
                 case 4:{
                     cout<<"Congrats, you have found the exit! You have\n"
                             "completed the game with "<<tGold<<
                             " gold coins and "<<tSilvr<<" silver coins.\n"<<
                             "Thanks for playing!"<<endl;
 
-
-                    //Figuratively setting tCoins equal to zero so it ends loop
+                  //Figuratively setting tCoins equal to zero so it ends loop
                     tCoins=0; 
                     break; 
                 }
-                    //Case 5
+                //Case 5
                 case 5:{
                     cout<<"You have opened a room that has transported you to\n"
                             <<place<<"! This trip will cost you 5 gold coins\n"
@@ -180,7 +168,7 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     break;
                 }
-                    //Case 6
+                //Case 6
                 case 6:{
                     //Local variable
                     char help; //Answer to help call
@@ -212,7 +200,7 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     break;
                 }
-                    //Case 7
+                //Case 7
                 case 7:{
                     int decsn; //Decision made upon results of game
                     
@@ -226,7 +214,6 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     //Function call
                     decsn=RPS ();
-
 
                     if (decsn==1){
                         cout<<"Congrats you have won! Bob has given you 5\n"
@@ -243,9 +230,7 @@ int main(int argc, char** argv) {
                     cout<<endl;
                     cout<<"You have "<<tGold<<" gold coins and "<<tSilvr<<
                             " silver coins."<<endl;
-
                     cout<<endl;
-
                     break;
                 }
                 //Case 8
@@ -280,9 +265,8 @@ int main(int argc, char** argv) {
                     input.close();
                 }
             }
-            //As long as the player has coins, game continues
+        //As long as the player has coins, game continues
         }while (tCoins!=0); 
-
 
         //Asks the player if he/she would like to repeat the game
         cout<<endl;
@@ -291,14 +275,10 @@ int main(int argc, char** argv) {
         cin>>answr;
         cout<<endl;
 
-
-    }while (answr=='Y'||answr=='y');
-    
+    }while (answr=='Y'||answr=='y');   
     //End Here.
     return 0;
 }
-
-
 //Function definitions
 int RPS (){
     //Define variables
